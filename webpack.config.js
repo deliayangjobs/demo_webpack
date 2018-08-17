@@ -37,6 +37,9 @@ module.exports = {
       }), // if any same point(exp. reactJS) in both vendor.js and bundle.js, only use vendor.js
       new HtmlWebpackPlugin({
           template: 'src/index.html'
+      }),
+      new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       })
   ]
 };
